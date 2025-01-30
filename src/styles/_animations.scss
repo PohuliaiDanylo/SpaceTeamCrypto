@@ -1,0 +1,13 @@
+@keyframes gradient-movement {
+    0%,
+    100% {
+        background-position: 50% 100%;
+    }
+    25%,
+    75% {
+        background-position: 100% 100%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}

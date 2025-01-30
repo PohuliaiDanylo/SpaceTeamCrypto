@@ -1,0 +1,100 @@
+@use "../../styles/variables" as *;
+@use "../../styles/animations" as *;
+
+.button-container {
+    cursor: pointer;
+}
+
+.button-primary {
+    background: linear-gradient(135deg, $accent-clr2 25%, $accent-clr1);
+    padding: 15px 30px;
+    text-transform: uppercase;
+    transition: color 0.125s ease-in-out, border-radius 0.125s ease-in-out;
+    border-radius: 2px;
+    background-size: 200% 200%;
+    background-position: 50% 100%;
+    animation: gradient-movement 5s ease-in-out infinite;
+
+    &:hover {
+        color: darken($color: $regular-text-clr, $amount: 75%);
+    }
+
+    &:active {
+        border-radius: 8px;
+    }
+}
+
+.button-secondary {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 $regular-text-padding;
+    border-radius: $regular-text-bg-border-radius;
+    transition: background-color 0.125s ease-in-out;
+
+    &:hover {
+        & > p::before {
+            width: 100%;
+        }
+
+        & > .button-container__dot {
+            transform: translateX(50px);
+            height: 0px;
+            opacity: 0;
+        }
+    }
+
+    &:active {
+        background-color: lighten(
+            $color: $regular-background-clr,
+            $amount: 10%
+        );
+
+        & > p::before {
+            width: 100%;
+        }
+        .button-container__dot {
+            transform: translateX(50px);
+            height: 0px;
+            opacity: 0;
+        }
+    }
+
+    & > p {
+        position: relative;
+        white-space: nowrap;
+
+        &::before {
+            content: "GET IN TOUCH";
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: linear-gradient(135deg, $accent-clr2 25%, $accent-clr1);
+            background-clip: text;
+            color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            width: 0%;
+            transition: width 0.25s ease-in-out;
+            background-size: 200% 200%;
+            background-position: 50% 100%;
+            animation: gradient-movement 5s ease-in-out infinite;
+        }
+    }
+
+    .button-container__dot {
+        pointer-events: none;
+        position: absolute;
+        left: -20px;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        background: linear-gradient(-135deg, $accent-clr2 25%, $accent-clr1);
+        transition: transform 0.25s ease-in-out, height 0.25s ease-in-out,
+            opacity 0.25s ease-in-out;
+        background-size: 200% 200%;
+        background-position: 50% 100%;
+        animation: gradient-movement 5s ease-in-out infinite;
+    }
+}

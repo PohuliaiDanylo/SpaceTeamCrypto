@@ -1,0 +1,13 @@
+@use "./styles/variables" as *;
+
+.main-container {
+    background-color: $regular-background-clr;
+    color: $regular-text-clr;
+    font-size: $regular-fs;
+    min-height: 100vh;
+    padding: 1rem 0;
+    & > div {
+        width: min(1440px, 100vw);
+        padding: 0 3rem;
+    }
+}

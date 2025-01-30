@@ -1,0 +1,138 @@
+@use "../../styles/variables" as *;
+
+@mixin dropDownMenuLine {
+    width: 30px;
+    height: 3px;
+    background-color: $regular-text-clr;
+    transition: transform 0.25s ease-in-out, background-color 0.25s ease-in-out,
+        top 0.25s ease-in-out;
+}
+
+.header-container {
+    position: relative;
+    z-index: 1;
+
+    .header-container__drop-down {
+        display: none;
+        position: relative;
+        cursor: pointer;
+        height: 20px;
+        outline: none;
+
+        & > div {
+            position: relative;
+            @include dropDownMenuLine;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 7.5px;
+                left: 0;
+                @include dropDownMenuLine;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: -7.5px;
+                left: 0;
+                @include dropDownMenuLine;
+            }
+        }
+    }
+
+    .header-container__drop-down--active div {
+        background: transparent;
+        &::after {
+            transform: rotate(45deg);
+            top: 0;
+        }
+        &::before {
+            transform: rotate(-45deg);
+            top: 0;
+        }
+    }
+
+    .header-container__links {
+        gap: $regular-gap;
+    }
+
+    @media (max-width: 1000px) {
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 550px;
+            z-index: -1;
+            transition: width 0.25s ease-in-out;
+            background: $regular-background-clr;
+            opacity: 75%;
+        }
+
+        .header-container__logo {
+            width: 100px;
+        }
+
+        .header-container__drop-down {
+            display: block;
+        }
+
+        .header-container__links {
+            position: absolute;
+            top: 10rem;
+            left: -200px;
+            flex-direction: column;
+            transform: translateX(0px);
+            transition: transform 0.25s ease-in-out;
+
+            & > li {
+                position: relative;
+                &::before {
+                    pointer-events: none;
+                    content: "";
+                    position: absolute;
+                    top: 10px;
+                    left: 0;
+                    width: 200px;
+                    height: 100%;
+                    border-bottom: 1px solid white;
+                }
+            }
+        }
+
+        .header-container__touch {
+            position: absolute;
+            top: 30rem;
+            left: -200px;
+            transform: translateX(0px);
+            transition: transform 0.25s ease-in-out;
+
+            &::before {
+                pointer-events: none;
+                content: "";
+                position: absolute;
+                top: 10px;
+                left: 0;
+                width: 200px;
+                height: 100%;
+                border-bottom: 1px solid white;
+            }
+        }
+
+        .header-container__links-mobile--active {
+            transform: translateX(250px);
+        }
+
+        .header-container__touch-mobile--active {
+            transform: translateX(250px);
+        }
+    }
+}
+
+.header-container--menu-active {
+    &::after {
+        width: 100%;
+    }
+}

@@ -1,0 +1,20 @@
+@use "../../styles/variables" as *;
+.mainSection-container {
+    gap: $regular-gap;
+
+    & > h1 {
+        font-size: $large-fs;
+        max-width: 550px;
+    }
+    & > p {
+        max-width: 450px;
+        color: $paragraph-text-clr;
+    }
+    @media (max-width: 650px) {
+        margin-top: $regular-text-padding;
+        & > h1 {
+            font-size: $big-fs;
+            line-height: calc($big-fs + 10px);
+        }
+    }
+}

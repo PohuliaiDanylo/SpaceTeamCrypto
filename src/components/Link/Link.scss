@@ -1,0 +1,16 @@
+@use "../../styles/variables" as *;
+
+.link-container {
+    padding: 0 $regular-text-padding;
+    border-radius: $regular-text-bg-border-radius;
+    transition: background-color 0.125s ease-in-out, color 0.125s ease-in-out;
+    &:hover {
+        background-color: lighten(
+            $color: $regular-background-clr,
+            $amount: 10%
+        );
+    }
+    &:active {
+        color: darken($color: $regular-text-clr, $amount: 25%);
+    }
+}
