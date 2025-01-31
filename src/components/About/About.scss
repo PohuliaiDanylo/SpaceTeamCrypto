@@ -2,18 +2,19 @@
 @use "../../styles//animations" as *;
 .about-container {
     margin-top: 20rem;
-    gap: $regular-gap;
+    gap: calc($regular-gap);
     & > h1 {
         font-size: $big-fs;
-        // line-height: $big-fs;
+        line-height: calc($big-fs + 10px);
     }
     & > p {
         line-height: 30px;
-        max-width: 450px;
+        max-width: 570px;
         color: $paragraph-text-clr;
     }
 
     .about-container__table {
+        margin-top: $regular-gap;
         gap: 2px;
         max-width: 1000px;
         background: linear-gradient(135deg, $accent-clr2 25%, $accent-clr1);

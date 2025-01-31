@@ -27,16 +27,16 @@ function Header() {
                 }`}
             >
                 <li>
-                    <Link label="ABOUT US" />
+                    <Link label="ABOUT US" style="primary" />
                 </li>
                 <li>
-                    <Link label="OUR SERVICES" />
+                    <Link label="OUR SERVICES" style="primary" />
                 </li>
                 <li>
-                    <Link label="WORK WITH US" />
+                    <Link label="WORK WITH US" style="primary" />
                 </li>
                 <li>
-                    <Link label="BLOG" />
+                    <Link label="BLOG" style="primary" />
                 </li>
             </ul>
             <div

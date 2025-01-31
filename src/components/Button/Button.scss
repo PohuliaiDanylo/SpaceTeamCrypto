@@ -66,6 +66,7 @@
     & > p {
         position: relative;
         white-space: nowrap;
+        font-size: $small-fs;
 
         &::before {
             content: "GET IN TOUCH";

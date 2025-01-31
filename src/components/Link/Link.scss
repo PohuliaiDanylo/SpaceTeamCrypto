@@ -1,9 +1,22 @@
 @use "../../styles/variables" as *;
+@use "../../styles/animations" as *;
+
+@mixin arrowLine {
+    width: 15px;
+    height: 2px;
+    border-radius: $regular-text-bg-border-radius;
+    background: linear-gradient(135deg, $accent-clr2 25%, $accent-clr1);
+    background-size: 200% 200%;
+    background-position: 50% 100%;
+    animation: gradient-movement 5s ease-in-out infinite;
+    transform: translateY(2.5px);
+}
 
 .link-container {
     padding: 0 $regular-text-padding;
     border-radius: $regular-text-bg-border-radius;
     transition: background-color 0.125s ease-in-out, color 0.125s ease-in-out;
+
     &:hover {
         background-color: lighten(
             $color: $regular-background-clr,
@@ -12,5 +25,56 @@
     }
     &:active {
         color: darken($color: $regular-text-clr, $amount: 25%);
+    }
+}
+.link-container-primary {
+    & > p {
+        font-size: $small-fs;
+    }
+}
+
+.link-container-secondary {
+    gap: 10px;
+    width: min-content;
+
+    & > p {
+        position: relative;
+        white-space: nowrap;
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            width: calc(100% + 5px);
+            background: linear-gradient(135deg, $accent-clr2 25%, $accent-clr1);
+            background-size: 200% 200%;
+            background-position: 50% 100%;
+            animation: gradient-movement 5s ease-in-out infinite;
+        }
+    }
+
+    & > .arrow {
+        position: relative;
+        @include arrowLine;
+
+        &::before {
+            @include arrowLine;
+            content: "";
+            position: absolute;
+            top: 3.25px;
+            right: -1px;
+            transform: rotate(-45deg);
+            width: 10px;
+        }
+        &::after {
+            @include arrowLine;
+            content: "";
+            position: absolute;
+            top: -3px;
+            right: -1px;
+            transform: rotate(45deg);
+            width: 10px;
+        }
     }
 }
