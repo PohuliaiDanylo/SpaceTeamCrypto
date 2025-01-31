@@ -1,0 +1,53 @@
+@use "../../styles/variables" as *;
+@use "../../styles//animations" as *;
+.about-container {
+    margin-top: 20rem;
+    gap: $regular-gap;
+    & > h1 {
+        font-size: $big-fs;
+        // line-height: $big-fs;
+    }
+    & > p {
+        line-height: 30px;
+        max-width: 450px;
+        color: $paragraph-text-clr;
+    }
+
+    .about-container__table {
+        gap: 2px;
+        max-width: 1000px;
+        background: linear-gradient(135deg, $accent-clr2 25%, $accent-clr1);
+        background-size: 200% 200%;
+        background-position: 50% 100%;
+        animation: gradient-movement 5s ease-in-out infinite;
+        .table__element {
+            flex: 1 1 15rem;
+            padding: 2rem 1rem;
+            background: $regular-background-clr;
+
+            &:nth-child(2) {
+                background: linear-gradient(
+                    135deg,
+                    $accent-clr2 25%,
+                    $accent-clr1
+                );
+                background-size: 200% 200%;
+                background-position: 50% 100%;
+                animation: gradient-movement 5s ease-in-out infinite;
+
+                & > p {
+                    color: $regular-text-clr;
+                }
+            }
+
+            & > h2 {
+                font-size: $medium-fs;
+                white-space: nowrap;
+            }
+
+            & > p {
+                color: $paragraph-text-clr;
+            }
+        }
+    }
+}

@@ -1,3 +1,8 @@
+// background-size: 200% 200%;
+// background-position: 50% 100%;
+// animation: gradient-movement 5s ease-in-out infinite;
+// ^^^apply this to element which you want to use animation on^^^
+
 @keyframes gradient-movement {
     0%,
     100% {
