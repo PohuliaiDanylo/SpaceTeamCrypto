@@ -9,18 +9,20 @@
     background: linear-gradient(135deg, $accent-clr2 25%, $accent-clr1);
     padding: 15px 30px;
     text-transform: uppercase;
-    transition: color 0.125s ease-in-out, border-radius 0.125s ease-in-out;
+    transition: color 0.125s ease-in-out, border-radius 0.125s ease-in-out,
+        outline 0.125s ease-in-out;
     border-radius: 2px;
     background-size: 200% 200%;
     background-position: 50% 100%;
     animation: gradient-movement 5s ease-in-out infinite;
 
     &:hover {
-        color: darken($color: $regular-text-clr, $amount: 75%);
+        color: lighten($color: $regular-background-clr, $amount: 10%);
     }
 
     &:active {
-        border-radius: 8px;
+        outline: 8px solid
+            lighten($color: $regular-background-clr, $amount: 10%);
     }
 }
 
