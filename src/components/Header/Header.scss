@@ -60,11 +60,11 @@
     @media (max-width: 1000px) {
         &::after {
             content: "";
-            position: fixed;
+            position: absolute;
             top: 0;
             left: 0;
             width: 0%;
-            height: 100vh;
+            height: 600px;
             z-index: -1;
             transition: width 0.25s ease-in-out;
             background: $regular-background-clr;
@@ -132,7 +132,6 @@
 }
 
 .header-container--menu-active {
-    position: fixed;
     &::after {
         width: 100%;
     }
