@@ -1,0 +1,176 @@
+@use "../../styles/variables" as *;
+
+.partners-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 10rem 0;
+    z-index: 2;
+
+    @media (max-width: 450px) {
+        margin: 5rem 0;
+    }
+
+    .partners-container__decoration {
+        position: absolute;
+        top: -25%;
+        left: 0;
+        z-index: 0;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 10rem;
+            left: -2.5rem;
+            z-index: -1;
+            border-radius: 50%;
+            box-shadow: 0 0 10rem 10rem rgba($color: $accent-clr2, $alpha: 0.75);
+        }
+
+        & > img {
+            position: relative;
+
+            &:nth-child(1) {
+                left: 5rem;
+                top: 10rem;
+                animation: objects-flying 4s ease-in-out infinite;
+            }
+            &:nth-child(2) {
+                left: -5rem;
+                top: 7.5rem;
+                animation: objects-flying 4s ease-in-out 1s infinite;
+            }
+            &:nth-child(3) {
+                left: -1rem;
+                top: -5rem;
+                animation: objects-flying 4s ease-in-out 2s infinite;
+            }
+        }
+
+        @media (max-width: 850px) {
+            opacity: 20%;
+            top: -20rem;
+            left: -7.5rem;
+        }
+    }
+
+    .partners-container__our-partners {
+        position: relative;
+        .out-partners__header {
+            font-size: $big-fs;
+            line-height: $big-fs;
+            max-width: 350px;
+
+            @media (max-width: 450px) {
+                font-size: $medium-fs;
+                line-height: $medium-fs;
+            }
+        }
+
+        .out-partners__partners {
+            position: relative;
+            gap: $regular-gap;
+            overflow: hidden;
+            z-index: 100;
+
+            @media (max-width: 850px) {
+                position: absolute;
+                opacity: 20%;
+                right: 0;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 30%;
+                background: linear-gradient(
+                    180deg,
+                    $regular-background-clr 20%,
+                    transparent
+                );
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: 0rem;
+                left: 0;
+                width: 100%;
+                height: 30%;
+                background: linear-gradient(
+                    0deg,
+                    $regular-background-clr 20%,
+                    transparent
+                );
+                z-index: 1;
+            }
+
+            .partners__column {
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                gap: $regular-gap;
+
+                &:nth-child(1) {
+                    transform: translateY(-5rem);
+                    animation: down-partners 10s ease-in-out infinite;
+                }
+                &:nth-child(2) {
+                    transform: translateY(5rem);
+
+                    animation: up-partners 10s ease-in-out infinite;
+                }
+
+                .column__el {
+                    width: 10rem;
+                    height: 10rem;
+                    display: flex;
+                    gap: calc($regular-gap / 2.5);
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: $small-br;
+                    border-width: 1px;
+                    border-color: $gradient-clr1;
+                    background: linear-gradient(
+                        180deg,
+                        rgba($color: $gradient-clr1, $alpha: 0.15),
+                        rgba($color: $regular-background-clr, $alpha: 0.1)
+                    );
+
+                    & > p {
+                        color: $cards-paragraph-clr;
+                        text-transform: uppercase;
+                        font-size: $small-fs;
+                    }
+
+                    @media (max-width: 450px) {
+                        width: 6rem;
+                        height: 7rem;
+                        gap: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes down-partners {
+    0%,
+    100% {
+        transform: translateY(-5rem);
+    }
+    50% {
+        transform: translateY(5rem);
+    }
+}
+
+@keyframes up-partners {
+    0%,
+    100% {
+        transform: translateY(5rem);
+    }
+    50% {
+        transform: translateY(-5rem);
+    }
+}
