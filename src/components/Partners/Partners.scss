@@ -5,6 +5,7 @@
     max-width: 1000px;
     margin: 10rem 0;
     z-index: 2;
+    gap: $regular-gap;
 
     @media (max-width: 450px) {
         margin: 5rem 0;
@@ -151,6 +152,19 @@
                     }
                 }
             }
+        }
+    }
+
+    .partners-container__about-partnerships {
+        margin-top: 10rem;
+        gap: $regular-gap;
+        & > h1 {
+            font-size: $big-fs;
+            line-height: $big-fs;
+        }
+
+        & > p {
+            max-width: 600px;
         }
     }
 }

@@ -1,5 +1,7 @@
 import "./Partners.scss";
 
+import PartnersSlider from "../PartnersSlider/PartnersSlider";
+
 import decoration1 from "../../assets/images/Partners/decoration/img1.png";
 import decoration2 from "../../assets/images/Partners/decoration/img2.png";
 import decoration3 from "../../assets/images/Partners/decoration/img3.png";
@@ -52,7 +54,14 @@ function Partners() {
                     </div>
                 </div>
             </div>
-            <div className="partners-container__about-partnerships"></div>
+            <div className="partners-container__about-partnerships flex flex-col items-center text-center">
+                <h1>We are in a good company</h1>
+                <p>
+                    Our partnerships have delivered great value to our projects
+                    and we’re happy to share some of their feedback below
+                </p>
+                <PartnersSlider />
+            </div>
         </div>
     );
 }
