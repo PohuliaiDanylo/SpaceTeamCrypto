@@ -40,21 +40,21 @@
         &:nth-child(3) .service__text::before {
             content: "";
             position: absolute;
-            left: -15rem;
-            top: 10rem;
+            left: -30rem;
+            top: 2.5rem;
             width: 10rem;
             height: 10rem;
             border-radius: 50%;
             background: rgba($color: $accent-clr2, $alpha: 0.5);
-            box-shadow: 0 0 20rem 20rem rgba($color: $accent-clr2, $alpha: 0.5);
+            box-shadow: 0 0 15rem 15rem rgba($color: $accent-clr2, $alpha: 0.5);
             z-index: -1;
         }
 
         &:nth-child(3) .service__text::after {
             content: "";
             position: absolute;
-            left: -50rem;
-            top: 15rem;
+            left: -35rem;
+            top: 30rem;
             width: 10rem;
             height: 10rem;
             border-radius: 50%;
