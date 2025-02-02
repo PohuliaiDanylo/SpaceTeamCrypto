@@ -12,7 +12,10 @@ import secondServiceImg3 from "../../assets/images/Service/secondService/img3.pn
 
 function Services() {
     return (
-        <div className="services-container flex flex-col items-center">
+        <div
+            id="our services"
+            className="services-container flex flex-col items-center"
+        >
             <div className="services-container__title flex flex-col items-center">
                 <h1>Crypto Market Making</h1>
                 <p>

@@ -15,7 +15,7 @@ import partner6 from "../../assets/images/Partners/partners/img6.png";
 
 function Partners() {
     return (
-        <div className="partners-container">
+        <div id="blog" className="partners-container">
             <div className="partners-container__decoration">
                 <img src={decoration1} alt="decoration" />
                 <img src={decoration2} alt="decoration" />

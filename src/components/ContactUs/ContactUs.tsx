@@ -26,7 +26,7 @@ function ContactUs() {
     }, []);
 
     return (
-        <div className="contact-us-container">
+        <div id="work with us" className="contact-us-container">
             <div className="contact-us-container__join-us flex justify-between">
                 <h1>
                     Join <span>Gravity Team</span>

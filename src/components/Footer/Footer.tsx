@@ -10,10 +10,18 @@ function Footer() {
                     <h3>SPACE TEAM</h3>
                     <ul className="flex flex-col">
                         <li>
-                            <Link label="About Us" style="primary"></Link>
+                            <Link
+                                label="About Us"
+                                style="primary"
+                                linkTo="#about us"
+                            ></Link>
                         </li>
                         <li>
-                            <Link label="Work with Us" style="primary"></Link>
+                            <Link
+                                label="Work with Us"
+                                style="primary"
+                                linkTo="#work with us"
+                            ></Link>
                         </li>
                     </ul>
                 </div>

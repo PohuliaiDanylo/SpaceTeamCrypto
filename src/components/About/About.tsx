@@ -2,7 +2,10 @@ import "./About.scss";
 
 function About() {
     return (
-        <div className="about-container flex flex-col items-center text-center">
+        <div
+            id="about us"
+            className="about-container flex flex-col items-center text-center"
+        >
             <h1>About Space Team</h1>
             <p>
                 At Space Team, we are on the mission to balance the supply and
