@@ -1,0 +1,59 @@
+@use "../../styles/variables" as *;
+
+.footer-container {
+    padding: 5rem 3rem !important;
+    max-width: 1000px;
+    gap: calc($regular-gap * 2);
+    font-size: $small-fs;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 1px;
+        width: 100vw;
+        background: rgba($color: $regular-text-clr, $alpha: 0.1);
+    }
+
+    @media (max-width: 650px) {
+        align-items: center;
+        gap: $regular-gap;
+        text-align: center;
+    }
+
+    & > .footer-container__links {
+        .links__links {
+            & > ul {
+                margin-top: calc($regular-gap / 4);
+                gap: calc($regular-gap / 4);
+                & > li {
+                    color: $paragraph-text-clr;
+                    font-weight: lighter;
+
+                    & > a {
+                        @media (max-width: 650px) {
+                            justify-content: center;
+                        }
+                    }
+                }
+            }
+        }
+        @media (max-width: 650px) {
+            flex-direction: column-reverse;
+            gap: $regular-gap;
+        }
+    }
+
+    & > .footer-container__rights {
+        color: $paragraph-text-clr;
+        font-weight: lighter;
+
+        @media (max-width: 650px) {
+            flex-direction: column-reverse;
+            gap: $regular-gap;
+        }
+    }
+}
