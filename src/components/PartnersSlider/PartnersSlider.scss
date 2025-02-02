@@ -149,6 +149,16 @@
                         height: $small-fs;
                         padding-left: 1rem;
                     }
+
+                    @media (max-width: 450px) {
+                        flex-direction: column;
+                        gap: calc($regular-gap / 4);
+
+                        & > p {
+                            padding: 0;
+                            border: none;
+                        }
+                    }
                 }
             }
         }
