@@ -1,0 +1,150 @@
+@use "../../styles/variables" as *;
+
+.contact-us-container {
+    margin-top: 5rem;
+    margin-bottom: 10rem;
+    max-width: 1000px;
+    .contact-us-container__join-us {
+        gap: $regular-gap;
+
+        & > h1 {
+            position: relative;
+            max-width: min-content;
+            font-size: $big-fs;
+            z-index: 0;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 3rem;
+                left: 0;
+                border-radius: 50%;
+                width: 15rem;
+                height: 5rem;
+                background: rgba($color: $accent-clr2, $alpha: 0.5);
+                box-shadow: 0 0 5rem 5rem
+                    rgba($color: $accent-clr2, $alpha: 0.5);
+                z-index: -1;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                top: 2rem;
+                right: 0;
+                border-radius: 50%;
+                width: 2rem;
+                height: 2rem;
+                background: rgba($color: $accent-clr1, $alpha: 0.2);
+                box-shadow: 0 0 5rem 5rem
+                    rgba($color: $accent-clr1, $alpha: 0.2);
+                z-index: -2;
+            }
+
+            & > span {
+                white-space: nowrap;
+            }
+        }
+
+        .join-us__info {
+            max-width: 508px;
+            gap: $regular-gap;
+            z-index: 2;
+        }
+
+        @media (max-width: 800px) {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+
+            .join-us__info {
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 450px) {
+            & > h1 {
+                font-size: $medium-fs;
+            }
+        }
+    }
+    .contact-us-container__contact {
+        margin-top: 10rem;
+        gap: $regular-gap;
+        & > h1 {
+            font-size: $big-fs;
+            line-height: $big-fs;
+            position: relative;
+            z-index: 0;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 3rem;
+                right: 1rem;
+                width: 2rem;
+                height: 2rem;
+                border-radius: 50%;
+                background: rgba($color: $accent-clr1, $alpha: 0.3);
+                box-shadow: 0 0 3rem 3rem
+                    rgba($color: $accent-clr1, $alpha: 0.3);
+                z-index: -1;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 6rem;
+                right: -13rem;
+                width: 10rem;
+                height: 10rem;
+                border-radius: 50%;
+                background: rgba($color: $accent-clr2, $alpha: 0.4);
+                box-shadow: 0 0 5rem 5rem
+                    rgba($color: $accent-clr2, $alpha: 0.4);
+                z-index: -1;
+                pointer-events: none;
+            }
+
+            @media (max-width: 450px) {
+                font-size: $medium-fs;
+                line-height: $medium-fs;
+            }
+        }
+
+        & > p {
+            position: relative;
+            text-align: center;
+            max-width: 660px;
+            z-index: 0;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 8rem;
+                right: -2rem;
+                width: 2rem;
+                height: 2rem;
+                border-radius: 50%;
+                background: rgba($color: $accent-clr1, $alpha: 0.3);
+                box-shadow: 0 0 3rem 3rem
+                    rgba($color: $accent-clr1, $alpha: 0.3);
+                z-index: -1;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 6rem;
+                left: -15rem;
+                width: 15rem;
+                height: 5rem;
+                border-radius: 50%;
+                background: rgba($color: $accent-clr2, $alpha: 0.4);
+                box-shadow: 0 0 5rem 5rem
+                    rgba($color: $accent-clr2, $alpha: 0.4);
+                z-index: -1;
+                pointer-events: none;
+            }
+        }
+    }
+}
